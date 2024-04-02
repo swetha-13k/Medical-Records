@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+    <style>
+         body {
+        margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://ik.imagekit.io/ffbvvtuz29/Web%20Development/WhatsApp%20Image%202024-04-02%20at%201.39.53%20PM%20(1).jpeg?updatedAt=1712045816557');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    padding: 30px;
+    text-align: center;
+    z-index: 1;
+    color: #ffffff;
+    background-color: rgba(194, 194, 245, 0.8); /* Transparent background color */
+}
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 150px); /* Adjust according to header height */
+        }
+
+        .personal-info-container {
+            width: 100%;
+            max-width: 800px; /* Set maximum width for the personal info container */
+            padding: 20px;
+            margin: 50px auto; /* Center the container horizontally */
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items at the start of the container */
+            transition: all 0.3s ease;
+        }
+        .personal-info-container:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+            width: 100%; /* Full width for labels */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            width: calc(50% - 15px); /* Reduced width for form groups */
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="number"],
+        .form-group input[type="date"],
+        .form-group input[type="tel"],
+        .form-group select {
+            width: calc(100% - 20px); /* Reduced width for input fields */
+            padding: 10px; /* Adjust input padding */
+            border: 1px solid #000000;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #000000;
+        }
+
+        .update {
+    width: 20.8cm;
+    padding: 15px; /* Increased padding for the submit button */
+    background-color: #00a3cc; /* Blue button */
+    color: #fff;
+    font-weight: 800;
+    background-color: #a6a6ed;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.update:hover {
+            background-color: #a6a6ed;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tagore Medical College and Hospital</h1>
+        <h2>Personal Information</h2>
+    </header>
+    <main>
+        <div class="personal-info-container">
+            <div class="form-group">
+                <label for="name">First Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your First name" required>
+            </div>
+            <div class="form-group">
+                <label for="initial">Last Name:</label>
+                <input type="text" id="initial" name="initial" placeholder="Enter your Last name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your Phone Number" required>
+            </div>
+            <div class="form-group">
+                <label for="occupation">Occupation:</label>
+                <input type="text" id="occupation" name="occupation" placeholder="Enter your Occupation" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" onchange="calculateAge()" placeholder="Enter your DOB"required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" readonly>
+            </div>
+            <div class="form-group">
+                <label for="bloodGroup">Blood Group:</label>
+                <input type="text" id="bloodGroup" placeholder="Enter your Blood Group" name="bloodGroup">
+            </div>
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="aadhar">Aadhar Number:</label>
+                <input type="tel" id="aadhar" name="aadhar" pattern="[0-9]{12}" placeholder="Enter your Aadhar Number" title="Aadhar number should be 12 digits without spaces" required>
+            </div>
+            <div class="form-group">
+                <label for="maritalStatus">Marital Status:</label>
+                <select id="maritalStatus" name="maritalStatus" onchange="toggleFields()" required>
+                    <option value="">Select</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                </select>
+            </div>
+            <div class="form-group" id="residentialFields">
+                <label for="residentialAddress">Residential Address:</label>
+                <input type="text" id="residentialAddress" placeholder="Residential Address"name="residentialAddress">
+            </div>
+            <div class="form-group" id="spouseFields" style="display: none;">
+                <label for="spouseName">Spouse's Name:</label>
+                <input type="text" id="spouseName" placeholder="Spouse's Name" name="spouseName">
+            </div>
+            <div class="form-group" id="spousePhoneFields" style="display: none;">
+                <label for="spousePhone">Spouse's Phone Number:</label>
+                <input type="tel" id="spousePhone" placeholder="Phone Number" name="spousePhone">
+            </div>
+            <div class="form-group" id="fatherFields">
+                <label for="fatherName">Father's/Guardian's Name:</label>
+                <input type="text" id="fatherName" placeholder="Father's/Guardian's Name" name="fatherName">
+            </div>
+            <div class="form-group" id="fatherPhoneFields">
+                <label for="fatherPhone">Father's/Guardian's Phone Number:</label>
+                <input type="tel" id="fatherPhone" placeholder="Father's/Guardian's Phone Number" name="fatherPhone">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="update">Update Information</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Calculate age based on DOB
+        function calculateAge() {
+            var dobInput = document.getElementById('dob');
+            var dob = new Date(dobInput.value);
+            var today = new Date();
+            var age = today.getFullYear() - dob.getFullYear();
+            var monthDiff = today.getMonth() - dob.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            document.getElementById('age').value = age;
+        }
+
+        // Toggle fields based on marital status
+        function toggleFields() {
+            var maritalStatus = document.getElementById('maritalStatus').value;
+            var spouseFields = document.getElementById('spouseFields');
+            var spousePhoneFields = document.getElementById('spousePhoneFields');
+            var fatherFields = document.getElementById('fatherFields');
+            var fatherPhoneFields = document.getElementById('fatherPhoneFields');
+            var motherFields = document.getElementById('motherFields');
+
+            if (maritalStatus === 'single') {
+                spouseFields.style.display = 'none';
+                spousePhoneFields.style.display = 'none';
+                fatherFields.style.display = 'block';
+                fatherPhoneFields.style.display = 'block';
+                motherFields.style.display = 'block';
+
+            } else if (maritalStatus === 'married') {
+                spouseFields.style.display = 'block';
+                spousePhoneFields.style.display = 'block';
+                fatherFields.style.display = 'none';
+                fatherPhoneFields.style.display = 'none';
+                motherFields.style.display = 'none';
+                
+            } else {
+                spouseFields.style.display = 'none';
+                spousePhoneFields.style.display = 'none';
+                fatherFields.style.display = 'none';
+                fatherPhoneFields.style.display = 'none';
+                motherFields.style.display = 'none';
+               
+            }
+        }
+    </script>
+</body>
+
+</html>

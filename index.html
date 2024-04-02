@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagore Medical College and Hospital</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://ik.imagekit.io/ffbvvtuz29/Web%20Development/WhatsApp%20Image%202024-04-02%20at%201.39.53%20PM%20(1).jpeg?updatedAt=1712045816557');
+            background-size: cover; /* Ensure the background image covers the entire page */
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: rgba(194, 194, 245, 0.8); /* Transparent background color */
+            padding: 30px;
+            text-align: center;
+            z-index: 1;
+            color: #ffffff;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"] {
+            background-color: rgba(255, 255, 255, 0.7); /* Override background color for input fields */
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .subtext {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        .container input[type="text"],
+        .container input[type="password"],
+        .container input[type="email"],
+        .container input[type="number"],
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #000000;
+            transition: all 0.3s ease;
+        }
+
+        .container input[type="text"]:focus,
+        .container input[type="password"]:focus,
+        .container input[type="email"]:focus,
+        .container input[type="number"]:focus,
+        .container input[type="text"]:focus,
+        .container input[type="password"]:focus {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-color: #c2c2f5;
+            box-shadow: 0 0 10px rgba(194,194,245)
+        }
+
+        .container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #a6a6ed;
+            border: none;
+            color: #ffffff; /* White */
+            font-weight: 800;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .container button:hover {
+            background-color: #a6a6ed;
+            transform: scale(1.05);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .register-link,
+        .forgot-password-link {
+            font-size: 14px;
+            text-decoration: none;
+            color: #000000;
+            margin-top: 10px;
+        }
+
+        .register-link:hover,
+        .forgot-password-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .container {
+                max-width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                max-width: 90%;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .subtext {
+                font-size: 14px;
+            }
+
+            .container input[type="text"],
+            .container input[type="password"],
+            .container input[type="email"],
+            .container input[type="number"],
+            .container input[type="submit"] {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .register-link,
+            .forgot-password-link {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tagore Medical College and Hospital</h1>
+        <p class="subtext">Patient Record Details</p>
+    </div>
+
+    <!-- Login Container -->
+    <div class="container">
+        <form action="#" method="post">
+            <input type="text" name="email" placeholder="Email/Phone Number">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit"><a href="basic.html">Login</a></button>
+        </form>
+        <div class="links">
+            <a href="registration.html" class="register-link">New Registration</a>
+            <a href="#" class="forgot-password-link">Forgot Password</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+   
+
+
+ 
